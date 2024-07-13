@@ -1,6 +1,14 @@
+import Banner from "components/Banner";
+import Footer from "components/Footer";
+import Header from "components/Header";
+
 function Inicio() {
     return (
-        <h1>Hola desde inicio</h1>
+        <>
+            <Header />
+            <Banner />
+            <Footer />
+        </>
     )
 }
 

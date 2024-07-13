@@ -1,0 +1,24 @@
+.link {
+    font-size: 18px;
+    font-weight: 400;
+    padding: 15px 25px;
+    color: white;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    border: white solid 2px;
+    border-radius: 15px;
+    line-height: 24px;
+    margin-left: 23px;
+}
+
+.link:hover{
+    background-color: black;
+    color: #2271D1;
+    border: #2271D1 solid 2px;
+    box-shadow: inset 1px 1px 19px 5px #2271D1;
+}
+
+nav :first-child{
+    padding: 15px 55px;
+}
