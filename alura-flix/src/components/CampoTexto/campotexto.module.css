@@ -1,0 +1,26 @@
+.campo {
+    font-family: "Source Sans 3", sans-serif;
+    color: #FFFF;
+    width: 50%;
+}
+
+.campo label {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.campo input {
+    width: 80%;
+    background-color: #191919;
+    border: solid 3px #262626;
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}

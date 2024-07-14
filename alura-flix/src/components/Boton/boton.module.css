@@ -1,0 +1,19 @@
+button{
+    font-family: "Source Sans 3", sans-serif;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    border: white solid 2px;
+    border-radius: 15px;
+    padding: 15px 35px;
+    background-color: transparent;
+}
+
+button:hover{
+    background-color: black;
+    color: #2271D1;
+    border: #2271D1 solid 2px;
+    box-shadow: inset 1px 1px 19px 5px #2271D1;
+}
+
