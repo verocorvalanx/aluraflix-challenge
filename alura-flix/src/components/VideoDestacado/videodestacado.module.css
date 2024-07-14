@@ -1,0 +1,41 @@
+h1 {
+    margin: 0;
+}
+
+.contenedor {
+    display: flex;
+    gap: 25%;
+    padding: 10%;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+iframe {
+    box-shadow: inset 0px 0px 17px 8px #6BD1FF;
+    border-radius: 15px;
+
+}
+
+
+.title {
+    font-weight: bolder;
+    font-size: 48px;
+    border: #6BD1FF solid 1px;
+    background-color: #6BD1FF;
+    border-radius: 15px;
+    padding: 15px 15px 15px 15px;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 8%;
+}
+
+.secondtitle {
+    font-size: 46px;
+    font-weight: 400;
+
+}
+
+p{
+    font-size: 18px;
+    font-weight: lighter;
+}
