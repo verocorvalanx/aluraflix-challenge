@@ -5,9 +5,15 @@ import Boton from "components/Boton"
 
 
 function Formulario() {
+
+const manejarEnvio = (e) => {
+    e.preventDefault()
+    console.log("Manejar el envío", e)
+}
+
     return (
         <section className={styles.formulario}>
-            <form>
+            <form onSubmit={manejarEnvio}>
                 <div className={styles.header}>
                     <h1>NUEVO VIDEO</h1>
                     <h3>COMPLETE EL FORMULARIO PARA CREAR UNA NUEVA TARJETA DE VIDEO</h3>
@@ -27,8 +33,8 @@ function Formulario() {
                     </div>
 
                     <div className={styles.botones}>
-                        <Boton nombre="GUARDAR" />
-                        <Boton nombre="LIMPIAR" />
+                        <Boton type="submit" nombre="GUARDAR" />
+                        <Boton type="reset" nombre="LIMPIAR" />
                        
                     </div>
                 </div>

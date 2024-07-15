@@ -2,7 +2,7 @@ import styles from "./boton.module.css"
 
 function Boton(props) {
     return (
-<button>{props.nombre}</button>
+<button type={props.type} >{props.nombre}</button>
     )
 }
 
