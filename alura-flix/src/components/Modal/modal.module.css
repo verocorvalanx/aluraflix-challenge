@@ -1,4 +1,49 @@
-.botonModal{
-color: white !important;
-background-color: black !important;
+.modal {
+    background-color: #03122F;
+    border: #6BD1FF solid 3px;
+    border-radius: 15px;
+    font-family: "Source Sans 3", sans-serif;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 70px;
+    width: 50%;
+    height: auto;
+}
+
+.iconCancel {
+    cursor: pointer;
+    float: right;
+}
+
+.iconCancel:hover{
+    cursor: pointer;
+    width: 28px;
+}
+
+.container {
+    margin: 5% 10%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+}
+
+.form {
+    width: 90%;
+}
+
+.title {
+    font-family: "Roboto";
+    color: #2271D1;
+    font-size: 60px;
+    font-weight: 500;
+
+}
+
+.botones {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 25px;
 }

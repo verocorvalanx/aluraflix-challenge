@@ -3,6 +3,8 @@ import styles from "./categoria.module.css"
 import { useEffect, useState } from "react"
 
 
+
+
 function Categoria({ categoria, color }) {
     const [videos, setVideos] = useState([])
 
@@ -13,6 +15,8 @@ function Categoria({ categoria, color }) {
                 setVideos(data)
             })
     }, [])
+
+
 
 
     return (
@@ -26,6 +30,7 @@ function Categoria({ categoria, color }) {
                     return <Card {...video} key={video.id} color={`${color}`} />
                 })}
             </div>
+     
         </>
     )
 }

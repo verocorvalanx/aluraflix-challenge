@@ -1,13 +1,80 @@
+import Boton from "components/Boton"
 import styles from "./modal.module.css"
+import CampoTexto from "components/CampoTexto"
+import iconCancel from "./cancel.png"
+import { useState } from "react"
 
-function Modal() {
+function Modal(/*{ video }*/) {
+   
+
+        const [titulo, setTitulo] = useState("")
+        const [video, setVideo] = useState("")
+        const [categoria, setCategoria] = useState("")
+    
+    
+       
+        const manejarEnvio = (e) => {
+    
+            e.preventDefault();
+            e.target.reset()
+    
+    
+            let datosAEnviar = {
+                titulo: titulo.toLowerCase().trim(),
+                video: video.toLowerCase().trim(),
+                categoria: categoria.toLowerCase().trim().replace(" ", "")
+            }
+    
+            console.log(datosAEnviar)
+    
+        }
+    
+
     return (
-        <dialog open>
-            <p>bli</p>
-            <form method="dialog">
-                <button className={styles.botonModal}>re bli</button>
-            </form>
+        <dialog open={true} className={styles.modal}>
+
+            <img src={iconCancel} className={styles.iconCancel} />
+
+            <div className={styles.container}>
+
+                <h1 className={styles.title}>EDITAR CARD:</h1>
+
+                <form method="dialog" onSubmit={manejarEnvio}>
+                    <div className={styles.form}>
+                     
+                        <CampoTexto
+                            titulo="Título"
+                            placeholder="Ingrese el título"
+                            valor={titulo}
+                            setValor={setTitulo}
+                            
+                        />
+                        <CampoTexto
+                            titulo="Categoría"
+                            placeholder="Ingrese una categoría: Front End, Back End o Innovación"
+                            valor={categoria}
+                            setValor={setCategoria}
+                        />
+                   
+
+
+                        <CampoTexto
+                            titulo="Video"
+                            placeholder="Ingrese el enlace del video"
+                            valor={video}
+                            setValor={setVideo}
+                        />
+                   
+                    </div>
+                    <div className={styles.botones}>
+                        <Boton type="submit" nombre="GUARDAR" />
+                        <Boton type="reset" nombre="LIMPIAR" />
+                    </div>
+                </form>
+
+            </div>
         </dialog>
     )
 }
+
 export default Modal
