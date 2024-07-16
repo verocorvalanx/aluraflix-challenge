@@ -8,7 +8,7 @@ import { useState } from "react";
 function Inicio() {
 
 
-    //const [videoSeleccionado, setVideoSeleccionado] = useState(null)
+    const [video, setVideo] = useState("")
 
     return (
         <>

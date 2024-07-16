@@ -4,7 +4,23 @@ import CampoTexto from "components/CampoTexto"
 import iconCancel from "./cancel.png"
 import { useState } from "react"
 
+
+const Overlay = () => {
+    return (
+        <div className={styles.overlay}>
+
+        </div>
+    )
+}
+
+
+
 function Modal(/*{ video }*/) {
+
+    const [open, setOpen] = useState(true);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
 
 
     const [titulo, setTitulo] = useState("")
@@ -31,53 +47,56 @@ function Modal(/*{ video }*/) {
 
 
     return (
-        <dialog open={true} className={styles.modal}>
+        <>
+          {open && <Overlay />}
+            <dialog open={open} onClose={handleClose} className={styles.modal}>
 
-            <img src={iconCancel} className={styles.iconCancel} />
+                <img src={iconCancel} onClick={handleClose} className={styles.iconCancel} />
 
-            <div className={styles.container}>
+                <div className={styles.container}>
 
-                <h1 className={styles.title}>EDITAR CARD:</h1>
+                    <h1 className={styles.title}>EDITAR CARD:</h1>
 
-                <form method="dialog" onSubmit={manejarEnvio}>
-                    <div className={styles.form}>
+                    <form method="dialog" onSubmit={manejarEnvio}>
+                        <div className={styles.form}>
 
-                        <CampoTexto
-                            titulo="Título"
-                            placeholder="Ingrese el título"
-                            valor={titulo}
-                            setValor={setTitulo}
-                            color="#2271D1"
-
-
-                        />
-                        <CampoTexto
-                            titulo="Categoría"
-                            placeholder="Ingrese una categoría: Front End, Back End o Innovación"
-                            valor={categoria}
-                            setValor={setCategoria}
-                            color="#2271D1"
-                        />
+                            <CampoTexto
+                                titulo="Título"
+                                placeholder="Ingrese el título"
+                                valor={titulo}
+                                setValor={setTitulo}
+                                color="#2271D1"
 
 
+                            />
+                            <CampoTexto
+                                titulo="Categoría"
+                                placeholder="Ingrese una categoría: Front End, Back End o Innovación"
+                                valor={categoria}
+                                setValor={setCategoria}
+                                color="#2271D1"
+                            />
 
-                        <CampoTexto
-                            titulo="Video"
-                            placeholder="Ingrese el enlace del video"
-                            valor={video}
-                            setValor={setVideo}
-                            color="#2271D1"
-                        />
 
-                    </div>
-                    <div className={styles.botones}>
-                        <Boton type="submit" nombre="GUARDAR" />
-                        <Boton type="reset" nombre="LIMPIAR" />
-                    </div>
-                </form>
 
-            </div>
-        </dialog>
+                            <CampoTexto
+                                titulo="Video"
+                                placeholder="Ingrese el enlace del video"
+                                valor={video}
+                                setValor={setVideo}
+                                color="#2271D1"
+                            />
+
+                        </div>
+                        <div className={styles.botones}>
+                            <Boton type="submit" nombre="GUARDAR" />
+                            <Boton type="reset" nombre="LIMPIAR" />
+                        </div>
+                    </form>
+
+                </div>
+            </dialog>
+        </>
     )
 }
 
