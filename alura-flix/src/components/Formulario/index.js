@@ -2,14 +2,34 @@ import ListaOpciones from "components/ListaOpciones"
 import styles from "./formulario.module.css"
 import CampoTexto from "components/CampoTexto"
 import Boton from "components/Boton"
+import { useState } from "react"
 
 
 function Formulario() {
 
-const manejarEnvio = (e) => {
-    e.preventDefault()
-    console.log("Manejar el envío", e)
-}
+    const [titulo, setTitulo] = useState("")
+    const [video, setVideo] = useState("")
+    const [categoria, setCategoria] = useState("")
+
+
+   
+    const manejarEnvio = (e) => {
+
+        e.preventDefault();
+        e.target.reset()
+
+
+        let datosAEnviar = {
+            titulo: titulo.toLowerCase().trim(),
+            video: video.toLowerCase().trim(),
+            categoria: categoria.toLowerCase().trim().replace(" ", "")
+        }
+
+        console.log(datosAEnviar)
+
+    }
+
+
 
     return (
         <section className={styles.formulario}>
@@ -23,19 +43,34 @@ const manejarEnvio = (e) => {
                     <h2>Crear Tarjeta</h2>
 
                     <div className={styles.campos}>
-                        <CampoTexto titulo="Título" placeholder="Ingrese el título" />
-                        <ListaOpciones />
+                        <CampoTexto
+                            titulo="Título"
+                            placeholder="Ingrese el título"
+                            valor={titulo}
+                            setValor={setTitulo}
+                        />
+                        <CampoTexto
+                            titulo="Categoría"
+                            placeholder="Ingrese una categoría: Front End, Back End o Innovación"
+                            valor={categoria}
+                            setValor={setCategoria}
+                        />
                     </div>
 
                     <div className={styles.campos}>
-                        <CampoTexto titulo="Imagen" placeholder="Ingrese el enlace de la imagen" />
-                        <CampoTexto titulo="Video" placeholder="Ingrese el enlace del video" />
+
+                        <CampoTexto
+                            titulo="Video"
+                            placeholder="Ingrese el enlace del video"
+                            valor={video}
+                            setValor={setVideo}
+                        />
                     </div>
 
                     <div className={styles.botones}>
                         <Boton type="submit" nombre="GUARDAR" />
-                        <Boton type="reset" nombre="LIMPIAR" />
-                       
+                        <Boton  type="reset"  nombre="LIMPIAR" />
+
                     </div>
                 </div>
 
