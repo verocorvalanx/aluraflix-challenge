@@ -17,6 +17,7 @@ function CampoTexto(props) {
                 required
                 value={props.valor}
                 onChange={manejarCambio}
+                style={{ border: `3px solid ${props.color}`}}
             />
         </div>
     )

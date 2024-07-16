@@ -12,7 +12,7 @@ function Formulario() {
     const [categoria, setCategoria] = useState("")
 
 
-   
+
     const manejarEnvio = (e) => {
 
         e.preventDefault();
@@ -48,12 +48,15 @@ function Formulario() {
                             placeholder="Ingrese el título"
                             valor={titulo}
                             setValor={setTitulo}
+                            color="#262626"
                         />
                         <CampoTexto
                             titulo="Categoría"
                             placeholder="Ingrese una categoría: Front End, Back End o Innovación"
                             valor={categoria}
                             setValor={setCategoria}
+                            color="#262626"
+
                         />
                     </div>
 
@@ -64,12 +67,14 @@ function Formulario() {
                             placeholder="Ingrese el enlace del video"
                             valor={video}
                             setValor={setVideo}
+                            color="#262626"
+
                         />
                     </div>
 
                     <div className={styles.botones}>
                         <Boton type="submit" nombre="GUARDAR" />
-                        <Boton  type="reset"  nombre="LIMPIAR" />
+                        <Boton type="reset" nombre="LIMPIAR" />
 
                     </div>
                 </div>
