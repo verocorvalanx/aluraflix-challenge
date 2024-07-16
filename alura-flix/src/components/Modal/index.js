@@ -5,7 +5,7 @@ function Modal() {
         <dialog open>
             <p>bli</p>
             <form method="dialog">
-                <button>re bli</button>
+                <button className={styles.botonModal}>re bli</button>
             </form>
         </dialog>
     )
